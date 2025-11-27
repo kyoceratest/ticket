@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ticket Reporting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-/rU3FvxCdkvKxuxMxDPZWS9Vyuk3F7S3w7Dnk3a1JpN96CB2A+qsSVqS+8CA0nVddOZXS6AMDttuPAHyx64Kng==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.1/jspdf.plugin.autotable.min.js" integrity="sha512-m4C5WaoZc8gu07pmDpGWAzqGRqlhK/SUh6y6DFVvEe4Q5Kc72ONn59VqkDxu2UsdCagesfqJ3jf+yV+E5DItLw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <h1>Ticket Reporting</h1>
+    </div>
+    <div class="topbar-right">
+      <a href="index.html">Back to board</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="toolbar">
+      <div class="filters">
+        <label>
+          Owner
+          <input id="owner-filter" placeholder="Owner" />
+        </label>
+        <label>
+          Group
+          <select id="group-filter">
+            <option value="Completed">Completed</option>
+            <option value="">All groups</option>
+            <option value="New request">New request</option>
+            <option value="Under development">Under development</option>
+          </select>
+        </label>
+      </div>
+      <button id="export-pdf-btn">Export to PDF</button>
+    </section>
+
+    <section class="board">
+      <table>
+        <thead>
+          <tr>
+            <th>Item name</th>
+            <th>Owner</th>
+            <th>Due date</th>
+            <th>Priority</th>
+            <th>Group</th>
+          </tr>
+        </thead>
+        <tbody id="ticket-body"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="report.js"></script>
+</body>
+</html>

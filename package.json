@@ -1,0 +1,16 @@
+{
+  "name": "task-ticket-app",
+  "version": "1.0.0",
+  "description": "Simple IT ticket tracking app (Admin/Manager/Employee roles)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.0",
+    "nodemailer": "^6.10.1"
+  }
+}

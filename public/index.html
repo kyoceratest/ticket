@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>IT Ticket Board</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <h1>IT Ticket Board</h1>
+      <span id="current-role">Role: Employee</span>
+    </div>
+    <div class="topbar-right">
+      <a href="report.html">Reporting</a>
+      <select id="role-select">
+        <option value="employee">Employee</option>
+        <option value="manager">Manager</option>
+        <option value="admin">Admin</option>
+      </select>
+      <input id="search-input" type="search" placeholder="Search tickets" />
+    </div>
+  </header>
+
+  <main>
+    <section class="toolbar">
+      <div class="filters">
+        <select id="status-filter">
+          <option value="">All status</option>
+          <option value="New">New</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Stuck">Stuck</option>
+          <option value="Done">Done</option>
+        </select>
+        <select id="priority-filter">
+          <option value="">All priorities</option>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+        <select id="group-filter">
+          <option value="">All groups</option>
+          <option value="New request">New request</option>
+          <option value="Under development">Under development</option>
+          <option value="Completed">Completed</option>
+        </select>
+      </div>
+      <button id="add-ticket-btn">Add ticket</button>
+    </section>
+
+    <section class="board">
+      <table>
+        <thead>
+          <tr>
+            <th>Item name</th>
+            <th>Status</th>
+            <th>Owner</th>
+            <th>Due date</th>
+            <th>Priority</th>
+            <th>Group</th>
+            <th>Note</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="ticket-body"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <div id="ticket-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="modal-title">New ticket</h2>
+      <form id="ticket-form">
+        <input type="hidden" id="ticket-id" />
+        <label>
+          Item name
+          <input id="item-name" required />
+        </label>
+        <label>
+          Status
+          <select id="status">
+            <option value="New">New</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Stuck">Stuck</option>
+            <option value="Done">Done</option>
+          </select>
+        </label>
+        <label>
+          Owner
+          <input id="owner" />
+        </label>
+        <label>
+          Owner email
+          <input id="owner-email" type="email" />
+        </label>
+        <label>
+          Due date
+          <input id="due-date" type="date" />
+        </label>
+        <label>
+          Priority
+          <select id="priority">
+            <option value="Low">Low</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="High">High</option>
+          </select>
+        </label>
+        <label>
+          Group
+          <select id="group">
+            <option value="New request">New request</option>
+            <option value="Under development">Under development</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </label>
+        <label>
+          Note
+          <textarea id="note" rows="4"></textarea>
+        </label>
+        <div class="modal-actions">
+          <button type="button" id="cancel-btn">Cancel</button>
+          <button type="submit">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
