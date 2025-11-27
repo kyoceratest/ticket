@@ -5,8 +5,6 @@
   <title>Ticket Reporting</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-/rU3FvxCdkvKxuxMxDPZWS9Vyuk3F7S3w7Dnk3a1JpN96CB2A+qsSVqS+8CA0nVddOZXS6AMDttuPAHyx64Kng==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.1/jspdf.plugin.autotable.min.js" integrity="sha512-m4C5WaoZc8gu07pmDpGWAzqGRqlhK/SUh6y6DFVvEe4Q5Kc72ONn59VqkDxu2UsdCagesfqJ3jf+yV+E5DItLw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
   <header class="topbar">
@@ -35,13 +33,14 @@
           </select>
         </label>
       </div>
-      <button id="export-pdf-btn">Export to PDF</button>
+      <button id="export-pdf-btn">Save report</button>
     </section>
 
     <section class="board">
       <table>
         <thead>
           <tr>
+            <th>Select</th>
             <th>Item name</th>
             <th>Owner</th>
             <th>Due date</th>
@@ -52,6 +51,7 @@
         <tbody id="ticket-body"></tbody>
       </table>
     </section>
+    <section id="print-container" class="print-only"></section>
   </main>
 
   <script src="report.js"></script>

@@ -230,3 +230,29 @@ a:hover {
 textarea {
   resize: vertical;
 }
+
+.print-only {
+  display: none;
+}
+
+.print-ticket {
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #1f2937;
+}
+
+.print-ticket h2 {
+  margin: 0 0 0.35rem;
+}
+
+@media print {
+  body.printing-report .board,
+  body.printing-report .toolbar,
+  body.printing-report .topbar-right {
+    display: none !important;
+  }
+
+  body.printing-report .print-only {
+    display: block;
+  }
+}
